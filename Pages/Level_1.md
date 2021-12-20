@@ -273,7 +273,7 @@ digitalWrite(buzzer, HIGH); // produce sound
 
 ## Circuit Diagrams
 
-https://drive.google.com/file/d/1bDv9XzsQwxKkAbMQ2d7FdhwT8368cu0T/view?usp=sharing
+![Expriment 6](https://drive.google.com/file/d/1bDv9XzsQwxKkAbMQ2d7FdhwT8368cu0T/view?usp=sharing)
 
 ## Code
 
@@ -316,10 +316,6 @@ void loop()
 
 > The RGB LED blinks.
 
-<iframe width="560" height="315"
-src="https://drive.google.com/file/d/1bDF6kjx_ksgmsZ-uUJKtRNaVgUGCyKvK/view?usp=sharing"
-frameborder="0" 
-allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
-allowfullscreen></iframe>
+![Expriment ](https://drive.google.com/file/d/1bDF6kjx_ksgmsZ-uUJKtRNaVgUGCyKvK/view?usp=sharing)
 
 
