@@ -11,8 +11,8 @@
 ### Levels of IoT Challenge
 
 > | Challenge | Topic | Links |
-> | --- | --- | --- |
-> | Level 1 | Arduino & Basic Electronics | [Documentation](https://sci-copath.github.io/Kerala-IoT-Challenge/pages/level_1) |
+> | --------- | ----- | ----- |
+> | Level 1 | Arduino & Basic Electronics | [Documentation](https://github.com/Unknown-Flyin-Wayfarer-backup/Kerala-IoT-Challenge/blob/main/Pages/Level_1.md) |
 > | Level 2 | | |
 > | Level 3 | | | 
 > | Level 4 | | | 
