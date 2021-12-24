@@ -14,25 +14,23 @@
 
 ## Circuit Diagram
 
-![1634898879183](https://user-images.githubusercontent.com/91405741/138440483-6eeb5475-4946-42e7-9f6b-3860c91efa42.jpg)
-
-![5h7X9_3102_1627394356](https://user-images.githubusercontent.com/91405741/137279765-8a82a34f-1dc0-4afc-9bd3-a31d7f62c428.png)
+<iframe src="https://drive.google.com/file/d/1a7StPJyJS_xLxvAypo7lb9wxHR5HKGno/preview" width="640" height="480" allow="autoplay"></iframe>
 
 ## Code
 
 ```
 
-int ledPin = 10; // define digital pin 10.
-void setup()
-{
-pinMode(ledPin, OUTPUT);// define pin with LED connected as output.
+int ledPin=10;   // define digital pin 10.
+
+void setup() {
+  pinMode(ledPin,OUTPUT); // define pin with LED connected as output.
 }
-void loop()
-{
-digitalWrite(ledPin, HIGH); // set the LED on.
-delay(1000); // wait for a second.
-digitalWrite(ledPin, LOW); // set the LED off.
-delay(1000); // wait for a second
+
+void loop() {
+  digitalWrite(ledPin,HIGH);  // set the LED on.
+  delay(1000);                // wait for a second.
+  digitalWrite(ledPin,LOW);   // set the LED off.
+  delay(1000);                // wait for a second.
 }
 
 ```
@@ -41,11 +39,7 @@ delay(1000); // wait for a second
 
 > The LED is blinked with a time interval od 1 second
 
-<iframe width="560" height="315"
-src="https://user-images.githubusercontent.com/91405741/137283496-04e4fe43-bc6a-4ca5-a6e0-0f7ecdcd56c5.mp4"
-frameborder="0" 
-allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
-allowfullscreen></iframe>
+<iframe src="https://drive.google.com/file/d/1_vFBUMslCSqiNlfPoc9ICI4rU2lpY0wn/preview" width="640" height="480" allow="autoplay"></iframe>
 
 # Experiment 2 : Traffic Light
 
@@ -62,52 +56,46 @@ allowfullscreen></iframe>
 
 ## Circuit Diagram
 
-![1634898905963](https://user-images.githubusercontent.com/91405741/138440549-c4c958ec-0893-4e80-8aba-3a43cafe865e.jpg)
-
-![yiU1x_3102_1627566759](https://user-images.githubusercontent.com/91405741/137288387-e85f8db9-ae97-49d0-888d-a2fc15e4c496.png)
+<iframe src="https://drive.google.com/file/d/1aOzUVYDMJTpzoL7NUcoNC5oCRviyUSPb/preview" width="640" height="480" allow="autoplay"></iframe>
 
 ## Code
 
 ```
 
-int redled =10; // initialize digital pin 10.
-int yellowled =7; // initialize digital pin 7.
-int greenled =4; // initialize digital pin 4.
-void setup()
-{
-pinMode(redled, OUTPUT);// set the pin with red LED as “output”
-pinMode(yellowled, OUTPUT); // set the pin with yellow LED as “output”
-pinMode(greenled, OUTPUT); // set the pin with green LED as “output”
-}
-void loop()
-{
-digitalWrite(greenled, HIGH);//// turn on green LED
-delay(5000);// wait 5 seconds
-digitalWrite(greenled, LOW); // turn off green LED
-for(int i=0;i<3;i++)// blinks for 3 times
-{
-delay(500);// wait 0.5 second
-digitalWrite(yellowled, HIGH);// turn on yellow LED
-delay(500);// wait 0.5 second
-digitalWrite(yellowled, LOW);// turn off yellow LED
-} 
-delay(500);// wait 0.5 second
-digitalWrite(redled, HIGH);// turn on red LED
-delay(5000);// wait 5 seconds
-digitalWrite(redled, LOW);// turn off red LED
+int redLED = 10;
+int yellowLED = 7;
+int greenLED = 4;
+
+void setup() {
+  pinMode(redLED, OUTPUT);
+  pinMode(yellowLED, OUTPUT);
+  pinMode(greenLED, OUTPUT);
 }
 
+void loop() {
+  digitalWrite(greenLED, HIGH);
+  delay(5000);
+  digitalWrite(greenLED, LOW);
+
+  for (int i = 0; i < 3; i++) {
+    delay(500);   // wait 5 seconds
+    digitalWrite(yellowLED, HIGH);
+    delay(500);
+    digitalWrite(yellowLED, LOW);
+  }
+  
+  delay(500);
+  digitalWrite(redLED, HIGH);
+  delay(5000);
+  digitalWrite(redLED, LOW);
+}
 ```
 
 ## Output
 
 > In Traffic light the green LED blink about 5 second, then it is turnoff. Then the yellow LED blinks 3 times with a time interval of 0.5 second.Then the red LED blink about 5 seconds. This process continues.
 
-<iframe width="560" height="315"
-src="https://user-images.githubusercontent.com/91405741/137290512-e479c4b3-1810-4b72-966f-42348620b1f4.mp4"
-frameborder="0" 
-allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
-allowfullscreen></iframe>
+<iframe src="https://drive.google.com/file/d/1aNLQ9esjV7VXee6iXbvcMZN3RidI1_2V/preview" width="640" height="480" allow="autoplay"></iframe>
 
 # Experiment 3 : LED Chasing Effect
 
