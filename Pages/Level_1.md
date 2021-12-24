@@ -37,7 +37,7 @@ void loop() {
 
 ## Output
 
-> The LED is blinked with a time interval od 1 second
+> The LED is blinked with a time interval of 1 second
 
 <iframe src="https://drive.google.com/file/d/1_vFBUMslCSqiNlfPoc9ICI4rU2lpY0wn/preview" width="640" height="480" allow="autoplay"></iframe>
 
