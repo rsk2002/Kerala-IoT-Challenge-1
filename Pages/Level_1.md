@@ -112,34 +112,32 @@ void loop() {
 
 ## Circuit Diagram
 
-![1634898830010](https://user-images.githubusercontent.com/91405741/138440641-844673fc-0cc9-4e67-bf8c-f1dd30d7a970.jpg)
-
-![s5yR0_3102_1627567167](https://user-images.githubusercontent.com/91405741/137292096-feb60c91-1a9a-474b-a596-300285f7b011.png)
+<iframe src="https://drive.google.com/file/d/1aRU9ASibO_EVZExIgvXuNEPUkLn4vJNc/preview" width="640" height="480" allow="autoplay"></iframe>
 
 ## Code
 
 ```
 
-int BASE = 2 ;  // the I/O pin for the first LED
-int NUM = 6;   // number of LEDs
+int BASE=2;  // the I/O pin for the first LED
+int NUM=6;   // number of LEDs
 void setup()
 {
-   for (int i = BASE; i < BASE + NUM; i ++) 
+   for(int i=BASE;i<BASE+NUM;i++)     //for(i=2;i<8;i++){}
    {
-     pinMode(i, OUTPUT);   // set I/O pins as output
+     pinMode(i,OUTPUT);   // set I/O pins as output
    }
 }
 void loop()
 {
-   for (int i = BASE; i < BASE + NUM; i ++) 
+   for(int i=BASE;i<BASE+NUM;i++) 
    {
-     digitalWrite(i, LOW);    // set I/O pins as “low”, turn off LEDs one by one.
+     digitalWrite(i,LOW);    // set I/O pins as “low”, turn off LEDs one by one.
      delay(200);        // delay
    }
-   for (int i = BASE; i < BASE + NUM; i ++) 
+   for(int i=BASE;i<BASE+NUM;i++) 
    {
-     digitalWrite(i, HIGH);    // set I/O pins as “high”, turn on LEDs one by one
-     delay(400);        // delay
+     digitalWrite(i,HIGH);    // set I/O pins as “high”, turn on LEDs one by one
+     delay(200);        // delay
    }  
 }
 
@@ -147,11 +145,7 @@ void loop()
 
 ## Output
 
-<iframe width="560" height="315"
-src="https://user-images.githubusercontent.com/91405741/137293394-f7b99c4d-4659-44fc-87ca-d331f3b6ebaf.mp4"
-frameborder="0" 
-allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
-allowfullscreen></iframe>
+<iframe src="https://drive.google.com/file/d/1aRS9UR71ErY2z8gHnOJLQbja9MWDuJ7g/preview" width="640" height="480" allow="autoplay"></iframe>
 
 # Experiment 4: Button Controlled LED
 
@@ -170,31 +164,28 @@ allowfullscreen></iframe>
 
 ## Circuit Diagrams
 
-![1634898715966](https://user-images.githubusercontent.com/91405741/138440748-60c27803-19c4-42f1-a4ec-cc198598bae8.jpg)
-
-![Ztk6E_3102_1628160172](https://user-images.githubusercontent.com/91405741/137344162-7149dfcf-836c-43ec-a01c-177d48958d12.png)
-
-![wQGca_3102_1628160139](https://user-images.githubusercontent.com/91405741/137344321-3e662dee-cb00-421d-a34d-848c2ffd1a6f.png)
+<iframe src="https://drive.google.com/file/d/1b9a3Xh35Hpcn2YSD-GWkLJ5_ezjbtI0Q/preview" width="640" height="480" allow="autoplay"></iframe>
 
 ## Code
 
 ```
 
-int ledpin=11;// initialize pin 11
-int inpin=7;// initialize pin 7
-int val;// define val
-void setup()
-{
-pinMode(ledpin,OUTPUT);// set LED pin as “output”
-pinMode(inpin,INPUT);// set button pin as “input”
+int pushButtonPin=7;
+int ledPin=10;
+
+void setup() {
+  pinMode(pushButtonPin,INPUT);
+  pinMode(ledPin,OUTPUT);
 }
-void loop()
-{
-val=digitalRead(inpin);// read the level value of pin 7 and assign if to val
-if(val==LOW)// check if the button is pressed, if yes, turn on the LED
-{ digitalWrite(ledpin,LOW);}
-else
-{ digitalWrite(ledpin,HIGH);}
+
+void loop() {
+  int value=digitalRead(pushButtonPin);
+  if(value==HIGH){
+    digitalWrite(ledPin,HIGH);
+    }
+  else{
+    digitalWrite(ledPin,LOW);
+    }  
 }
 
 ```
@@ -202,11 +193,7 @@ else
 
 > When the push button is pressed the LED is turned on otherwise it is off.
 
-<iframe width="560" height="315"
-src="https://user-images.githubusercontent.com/91405741/137346113-b41f1d56-84b5-4437-9d7a-3f11ab84991a.mp4"
-frameborder="0" 
-allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
-allowfullscreen></iframe>
+<iframe src="https://drive.google.com/file/d/1b75s8TpWnPmmIaZ2vRndma61RXcgMiC1/preview" width="640" height="480" allow="autoplay"></iframe>
 
 # Experiment 5 : Buzzer
 
@@ -220,22 +207,23 @@ allowfullscreen></iframe>
 * Breadboard Jumper Wire*2
 * USB cable*1
 
-![BBr05_3102_1628160460](https://user-images.githubusercontent.com/91405741/137346830-1fa2408c-2a1d-4fdf-a049-5736aeb803ec.png)
-
-![e9Pdc_3102_1628160446](https://user-images.githubusercontent.com/91405741/137346912-0f871dbf-8e86-4734-a337-fceeff454e33.png)
+<iframe src="https://drive.google.com/file/d/1bCYx4HTTnR6r5ofHokuyqMCTUS1FaTIR/preview" width="640" height="480" allow="autoplay"></iframe>
 
 ## Code
 
 ```
 
-int buzzer=8;// initialize digital IO pin that controls the buzzer
-void setup() 
-{ 
-  pinMode(buzzer,OUTPUT);// set pin mode as “output”
-} 
-void loop() 
-{
-digitalWrite(buzzer, HIGH); // produce sound
+int buzzerPin=8;
+
+void setup() {
+  pinMode(buzzerPin,OUTPUT);
+}
+
+void loop() {
+  digitalWrite(buzzerPin,HIGH);
+  delay(5000);
+  digitalWrite(buzzerPin,LOW);
+  delay(2500);
 }
 
 ```
@@ -244,7 +232,7 @@ digitalWrite(buzzer, HIGH); // produce sound
 
 > The Buzzer makes beep sound.
 
-![1634194968124](https://user-images.githubusercontent.com/91405741/137345459-3ad2e1ac-b091-40fd-bf7b-1bcccf29baec.jpg)
+<iframe src="https://drive.google.com/file/d/1b9musasMSkpdPV0hUYHVFDwXQ5Z2pUTT/preview" width="640" height="480" allow="autoplay"></iframe>
 
 
 # Experiment 6 : RGB LED
