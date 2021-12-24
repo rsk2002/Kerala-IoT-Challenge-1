@@ -292,5 +292,292 @@ void loop()
 
 > The RGB LED blinks.
 
+<iframe src="https://drive.google.com/file/d/1bDF6kjx_ksgmsZ-uUJKtRNaVgUGCyKvK/preview" width="640" height="480" allow="autoplay"></iframe>
+
+# Experiment 7 - LDR Light Sensor
+
+> An experiment to understand the working of an LDR light Sensor.
+
+## LDR : Light Dependent Sensor
+
+> Photo Resistor (Photovaristor) is a resistor whose resistance varies from different incident light strength. It's based on the photoelectric effect of semiconductor. If the incident light is intense, its resistance reduces; if the incident light is weak, the resistance increases.
+
+## Components Required
+
+* Arduino Uno Board
+* Photo Resistor*1
+* Red M5 LED*1
+* 10KΩ Resistor*1
+* 220Ω Resistor*1
+* Breadboard*1
+* Breadboard Jumper Wire*7
+* USB cable*1
+
+## Circuit Diagrams
+
+<iframe src="https://drive.google.com/file/d/1bYp2eFOM836RWwWW7p76h9Ws8N3Npqee/preview" width="640" height="480" allow="autoplay"></iframe>
+
+## Procedure
+
+* Connect the 3.3v output of the Arduino to the positive rail of the breadboard
+* Connect the ground to the negative rail of the breadboard
+* Place the LDR on the breadboard
+* Attach the 10K resistor to one of the legs of the LDR
+* Connect the A0 pin of the Arduino to the same column where the LDR and resistor is connected (Since the LDR gives out an analog voltage, it is connected to the analog input pin on the Arduino. The Arduino, with its built-in ADC (Analog to Digital Converter), then converts the analog voltage from 0-5V into a digital value in the range of 0-1023). - Now connect the other end of the 10K resistor to the negative rail
+* And the the second (free) leg of the LDR to the positive rail
+Pretty much this is what we need for the light sensing. Basic circuits like this can be done without an Arduino aswell. However, if you want to log the values and use it to create charts, run other logics etc. I will recomend an Arduino or ESP8266 or may be a ESP32 for this.
+Now, as we want our circuit to do something in the real world other than just displaying the values on the computer screen we will be attaching a LED to the circuit. The LED will turn on when its dark and will go off when its bright. To achieve this we will:
+* Place the LED on the breadboard
+* Connect the 220ohm resistor to the long leg (+ve) of the LED
+* Then we will connect the other leg of the resistor to pin number 13 (digital pin) of the Arduino
+* and the shorter leg of the LED to the negative rail of the breadboard
+
+## Code
+
+```
+
+int ledPin=11;
+int LDRPin=A0;
+int value=0;
+
+void setup() {
+  pinMode(ledPin,OUTPUT);
+  //pinMode(LDRPin,INPUT);
+  Serial.begin(9600);
+}
+
+void loop() {
+  value=analogRead(A0);
+  Serial.println(value);
+  if (value<50){
+    digitalWrite(ledPin,HIGH);
+    }
+  else{
+    digitalWrite(ledPin,LOW);  
+    } 
+}
+
+```
+
+## Output
+
+<iframe src="https://drive.google.com/file/d/1bWcJMEvDCdi6tGUzNEvNiH0hdSdv85ZH/preview" width="640" height="480" allow="autoplay"></iframe>
+
+
+# Experiment 8 : Flame Sensor
+
+> An experiment to understand the working of an Flame sensor.
+
+## Flame Sensor
+
+ **Usage**:These types of sensors are used for short range fire detection and can be used to monitor projects or as a safety precaution to cut devices off / on.
+
+ **Range**:I have found this unit is mostly accurate up to about 3 feet.
+
+ **How it works**:The flame sensor is very sensitive to IR wavelength at 760 nm ~ 1100 nm light.
+
+**Analog output (A0)**: Real-time output voltage signal on the thermal resistance.
+
+**Digital output (D0)**: When the temperature reaches a certain threshold, the output high and low signal threshold adjustable via potentiometer.
+
+**Pins:**
+
+* VCC - Positive voltage input: 5v for analog 3.3v for Digital.
+
+* A0 - Analog output
+
+* D0 - Digital output
+
+* GND -  Ground
+
+## Components Required
+
+* Arduino UNO
+* Flame Sensor
+* LED
+* Buzzer
+* BreadBoard
+* Jumper
+
+## Circuit Diagrams
+
+<iframe src="https://drive.google.com/file/d/1cxmamxl2GsNSdq9oZYFPBJLoNjNiGGSX/preview" width="640" height="480" allow="autoplay"></iframe>
+
+## Code
+
+```
+
+int buzzer=9;
+int flame=A0;
+int value=0;
+
+void setup() {
+  pinMode(buzzer,OUTPUT);
+  pinMode(flame,INPUT);
+  Serial.begin(9600);
+}
+
+void loop() {
+  value=analogRead(flame);
+  Serial.println(value);
+  if(value>100){
+    digitalWrite(buzzer,HIGH);
+    }
+  else{
+    digitalWrite(buzzer,LOW);
+    }  
+}
+
+```
+
+## Output
+
 <iframe src="https://drive.google.com/file/d/1crfYcVQjOEZs8XEKlhNs_esmtOyULyZQ/preview" width="640" height="480" allow="autoplay"></iframe>
+
+
+# Experiment 9 : LM35 Temperature Sensor
+
+> An experiment to understand the working of an LM35 Temperature Sensor.
+
+## LM35 Temperature Sensor
+
+> LM35 is a common and easy-to-use temperature sensor. LM35 is a widely used temperature sensor with many different package types. At room temperature, it can achieve the accuracy of ±1/4°C without additional calibration processing. LM35 temperature sensor can produce different voltage by different temperature When temperature is 0 ℃, it outputs 0V; if increasing 1 ℃, the output voltage will increase 10 mv.
+
+## Components Required
+
+* Arduino Uno  Board*1
+* LM35*1
+* Breadboard*1
+* Breadboard Jumper Wire*5
+* USB cable*1
+
+## Circuit Diagrams
+
+<iframe src="https://drive.google.com/file/d/1bhtQHqxbl2Hrli0SFZcpkpcB68WiRoc-/preview" width="640" height="480" allow="autoplay"></iframe>
+
+## Code
+
+```
+
+int potPin = 0; // initialize analog pin 0 for LM35 temperature sensor
+
+void setup()
+{
+  Serial.begin(9600);// set baud rate at”9600”
+}
+
+void loop()
+{
+  int val;// define variable
+  int dat;// define variable
+  val = analogRead(0); // read the analog value of the sensor and assign it to val
+  dat = (125 * val) >> 8; // temperature calculation formula
+  Serial.print("Temp: ");// output and display characters beginning with Tep
+  Serial.print(dat);// output and display value of dat
+  Serial.println("°C");// display “C” characters
+  delay(500);// wait for 0.5 second
+}
+
+```
+
+## Output
+
+<iframe src="https://drive.google.com/file/d/1bcseeXimEUsC-M9T-TZLl_irFxF7SUrn/preview" width="640" height="480" allow="autoplay"></iframe>       
+
+
+# Experiment 10:IR Remote Control Using TSOP
+
+> An experiment to understand the working of IR Remote Control using TSOP.
+
+## Components Required
+
+* Arduino Uno Board*1
+* Infrared Remote Controller(You can use TV Remote or any other remote) *1
+* Infrared Receiver *1
+* LED *6
+* 220ΩResistor *6
+* Breadboard Wire 
+* USB cable*1
+
+## Circuit Diagrams
+
+
+
+## Code
+
+```
+
+
+
+```
+
+## Output
+
+
+
+
+# Experiment 11 :Potentiometer analog Value Reading
+
+> An experiment to understand the working of Potentiometer.
+
+## Components Required
+
+* Arduino Uno Board*1
+* 10K Potentiometer *1
+* Breadboard*1
+* Breadboard Jumper Wire*3
+* USB cable*1
+
+## Circuit Diagrams
+
+
+## Code
+
+```
+
+void setup() {
+  pinMode(A0,INPUT);
+}
+
+void loop() {
+  int value=analogRead(A0);
+  Serial.println(value);
+}
+
+```
+
+## Output
+
+
+
+
+# Experiment 12 : 7 Segment Display
+        
+> An experiment to understand the working of 7 Segment Display.
+
+## Components Required
+
+* Arduino Uno Board*1
+* digit LED Segment Display*1
+* 220Ω Resistor*8
+* Breadboard*1
+* Breadboard Jumper Wires *several
+* USB cable*1
+
+## Circuit Diagrams
+
+
+
+## Code
+
+```
+
+
+
+```
+
+## Output
+
+
+
 
