@@ -12,7 +12,7 @@
 
 > | Challenge | Topic | Links |
 > | --------- | ----- | ----- |
-> | Level 1 | Arduino & Basic Electronics | [Documentation](https://unknown-flyin-wayfarer-backup.github.io/Kerala-IoT-Challenge/Pages/Level_1) |
+> | Level 1 | Arduino & Basic Electronics | [Documentation](https://rsk2002.github.io/Kerala-IoT-Challenge/Pages/page_1) |
 > | Level 2 | ESP32 & Internet technology | [Documentation]() |
 > | Level 3 | Advanced IoT | [Documentation]() | 
 > | Level 4 | Industry level IoT | [Documentation]() | 
